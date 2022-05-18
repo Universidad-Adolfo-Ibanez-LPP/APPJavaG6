@@ -18,7 +18,7 @@ import java.util.*;
  */
 public class DataManager {
 
-    private HashSet<Libro> data;
+    private List<Libro> data;
 
     private static DataManager instance;
 
@@ -35,7 +35,7 @@ public class DataManager {
         return instance;
     }
 
-    public HashSet<Libro> getData() {
+    public List<Libro> getData() {
         return data;
     }
 
@@ -74,7 +74,7 @@ public class DataManager {
         return resultados;
     }
 
-    public void setData(HashSet<Libro> data) {
+    public void setData(List<Libro> data) {
         this.data = data;
     }
 

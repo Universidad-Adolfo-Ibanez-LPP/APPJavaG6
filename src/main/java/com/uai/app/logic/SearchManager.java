@@ -34,7 +34,7 @@ public class SearchManager {
      */
     public HashSet<Libro> findPersonByAttribute(Tittles title, String theSearch){
         //ahora instancio un mapa con esas claves
-        HashSet<Libro> data = DataManager.getInstance().getData();;
+        List<Libro> data = DataManager.getInstance().getData();;
         HashSet<Libro> ciudadanos = new HashSet<Libro>();
         for (Libro p : data){
             //Uso lo mismo que en el data manager
