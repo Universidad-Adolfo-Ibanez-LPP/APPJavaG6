@@ -92,13 +92,31 @@ public class DataManager {
         return sb.toString();
     }
 
+    public String getTitulos() {
+        String aux=null;
+        StringBuilder sb= new StringBuilder(data.size() * 50);
+        for (Libro s : data) {
+            aux = s.getTitulo();
+            sb.append(aux);
+            sb.append("\n");
+        }
+        return sb.toString();
+    }
+
     public void agregarLibro(Libro p) {
         this.data.add(p);
     }
 
     public void removerLibro(Libro p) {
-        this.data.remove(p);
-    }
+        Libro index=null;
+        for (Libro s : data) {
+            if (s.compareTo(p)==0) {
+                System.out.println("Se ha eliminado el libro :"+s.getTitulo());
+                index=s;
+            }
+            }
+
+        this.data.remove(index);}
 
     public void removerLibros(Collection<Libro> libros) {
         this.data.removeAll(libros);

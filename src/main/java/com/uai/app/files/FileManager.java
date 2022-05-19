@@ -55,6 +55,7 @@ public class FileManager {
             CSVWriter writer = new CSVWriter(t);
             // Aca convierto al csv que necesito
             writer.writeNext(titles, false);
+
             List<Libro> data = DataManager.getInstance().getData();
 
             for (Libro p : data) {
