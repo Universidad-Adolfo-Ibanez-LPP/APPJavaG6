@@ -2,6 +2,7 @@ package com.uai.app.logic;
 
 import com.uai.app.dominio.Libro;
 import com.uai.app.dominio.enums.Tittles;
+import com.uai.app.exceptions.BookNotFoundException;
 import com.uai.app.exceptions.DataNotLoadedException;
 import com.uai.app.ui.utils.*;
 import org.apache.commons.text.CaseUtils;
@@ -114,11 +115,23 @@ public class DataManager {
                 System.out.println("Se ha eliminado el libro :"+s.getTitulo());
                 index=s;
             }
-            }
+        }
 
         this.data.remove(index);}
 
     public void removerLibros(Collection<Libro> libros) {
         this.data.removeAll(libros);
     }
+
+    public Libro buscarLibro(Libro titulo) throws BookNotFoundException {
+
+
+        for (Libro s : data) {
+            if (s.compareTo(titulo) == 0) {
+                return s;
+            }
+        }
+        throw new BookNotFoundException();
+    }
+
 }

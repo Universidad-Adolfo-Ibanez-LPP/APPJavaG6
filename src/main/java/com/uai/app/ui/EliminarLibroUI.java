@@ -26,7 +26,7 @@ public class EliminarLibroUI extends UAIJFrame{
         String tituloss= DataManager.getInstance().getTitulos();
         textArea1.setText(tituloss);
 
-        ConfirmarButton.addActionListener(new ActionListener() {
+            ConfirmarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String eleccion = textField1.getText();
