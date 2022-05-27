@@ -30,7 +30,7 @@ public class FileManager {
         }
     }
 
-    public List<Libro> getData() {
+  /*  public List<Libro> getData() {
         List<Libro> beans = null;
         try {
             FileReader ff = new FileReader(theFile, Charset.forName("UTF-8"));
@@ -47,6 +47,25 @@ public class FileManager {
         // HashSet<Libro> librosFinales = new HashSet();
         // librosFinales.addAll(beans);
         return beans;
+    }*/
+
+     public HashSet<Libro> getData() {
+        List<Libro> beans = null;
+        try {
+            FileReader ff = new FileReader(theFile, Charset.forName("UTF-8"));
+            beans = new CsvToBeanBuilder(ff)
+                    .withType(Libro.class)
+                    .build()
+                    .parse();
+        } catch (FileNotFoundException e) {
+            System.err.println("No existe el archivo");
+        } catch (IOException e) {
+            System.err.println("No se puede leer el archivo");
+        }
+        // Collections.sort(beans);
+         HashSet<Libro> librosFinales = new HashSet();
+        librosFinales.addAll(beans);
+        return librosFinales;
     }
 
     public void saveData() {
@@ -56,7 +75,8 @@ public class FileManager {
             // Aca convierto al csv que necesito
             writer.writeNext(titles, false);
 
-            List<Libro> data = DataManager.getInstance().getData();
+            //List<Libro> data = DataManager.getInstance().getData();
+            HashSet<Libro> data = DataManager.getInstance().getData();
 
             for (Libro p : data) {
                 // significa que lo quiero mantener

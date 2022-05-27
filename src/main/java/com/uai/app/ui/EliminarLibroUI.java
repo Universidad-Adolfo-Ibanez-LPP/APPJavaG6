@@ -2,6 +2,7 @@ package com.uai.app.ui;
 import com.uai.app.dominio.Libro;
 import com.uai.app.exceptions.DataNotLoadedException;
 import com.uai.app.logic.DataManager;
+import com.uai.app.logic.builders.LibroBuilder;
 import com.uai.app.ui.utils.UAIJFrame;
 import com.uai.app.ui.utils.UIBuilder;
 
@@ -30,12 +31,15 @@ public class EliminarLibroUI extends UAIJFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 String eleccion = textField1.getText();
-                Libro eliminar= new Libro(eleccion);
+                LibroBuilder builder=new LibroBuilder();
+                builder.withTitulo(eleccion);
+                Libro eliminar= builder.build();
                 DataManager.getInstance().removerLibro(eliminar);
                 dispose();
                 UIBuilder.buildUI(EliminarLibroUI.class);
             }
         });
+
     }
 }
 

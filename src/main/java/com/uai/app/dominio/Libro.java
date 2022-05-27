@@ -8,18 +8,6 @@ public class Libro implements Comparable<Libro>{
     }
 //    titulo,autor,anio,estante_numero,estante_seccion,piso,edificio,sede
 
-
-    public Libro(String titulo) {
-        this.titulo = titulo;
-        this.autor = null;
-        this.anio = -1;
-        this.estante_numero =-1;
-        this.estante_seccion =null;
-        this.piso = -1;
-        this.edificio = null;
-        this.sede = null;
-    }
-
     @CsvBindByName(column = "titulo")
     private String titulo;
 

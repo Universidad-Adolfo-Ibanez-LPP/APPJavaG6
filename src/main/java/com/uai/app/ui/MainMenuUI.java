@@ -1,12 +1,14 @@
 package com.uai.app.ui;
 
+import com.uai.app.App;
 import com.uai.app.ui.utils.UAIJFrame;
 import com.uai.app.ui.utils.UIBuilder;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class MainMenuUI extends UAIJFrame {
 
@@ -57,13 +59,14 @@ public class MainMenuUI extends UAIJFrame {
             }
 
         });
-        agregarButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                UIBuilder.buildUI(AgregarUI.class);
+
+        this.addWindowListener(new WindowAdapter() {
+
+            public void windowClosing(WindowEvent e) {
+                super.windowClosing(e);
+                App.saveData();
+                System.out.println("Terminado");
             }
-
         });
-
     }
 }

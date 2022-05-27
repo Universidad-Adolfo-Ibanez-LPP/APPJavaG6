@@ -19,7 +19,12 @@ import java.util.*;
  */
 public class DataManager {
 
-    private List<Libro> data;
+    //private List<Libro> data;
+    private HashSet<Libro> data;
+
+    private HashSet<String> sedeTEMP;
+    private HashSet<Integer> pisoTEMP;
+    private HashSet<String> seccionTEMP;
 
     private static DataManager instance;
 
@@ -36,9 +41,8 @@ public class DataManager {
         return instance;
     }
 
-    public List<Libro> getData() {
-        return data;
-    }
+    //public List<Libro> getData() {return data;}
+    public HashSet<Libro> getData() {return data;}
 
     public Map<String, Set<Libro>> getPeopleByColum(Tittles columName) {
         // ahora instancio un mapa con esas claves
@@ -75,8 +79,30 @@ public class DataManager {
         return resultados;
     }
 
-    public void setData(List<Libro> data) {
-        this.data = data;
+  //  public void setData(List<Libro> data) {this.data = data;}
+    public void setData(HashSet<Libro> data) {
+      this.data = data;
+  }
+
+    //public void setDatatemp(List<Libro> dataa){
+    public void setDatatemp(HashSet<Libro> dataa){
+        HashSet<String> set1 = new HashSet<String>();
+        HashSet<String> set2 = new HashSet<String>();
+        HashSet<Integer> set3 = new HashSet<Integer>();
+        for (Libro p : dataa){
+
+            String Newsede=p.getSede();
+            int Newpiso=p.getPiso();
+            String Newseccion=p.getEstante_seccion();
+
+            set1.add(Newsede);
+            set2.add(Newseccion);
+            set3.add(Newpiso);
+        }
+        this.sedeTEMP=set1;
+        this.seccionTEMP=set2;
+        this.pisoTEMP=set3;
+
     }
 
     public String getDataAsString() throws DataNotLoadedException {
@@ -104,20 +130,55 @@ public class DataManager {
         return sb.toString();
     }
 
+    public String getSedeTEMP() {
+        String aux=null;
+        StringBuilder sb= new StringBuilder(sedeTEMP.size() * 50);
+        for (String element :this.sedeTEMP){
+            sb.append(element);
+            sb.append("\n");
+        }
+        return sb.toString();
+    }
+
+    public String getPisoTEMP() {
+        Integer aux=null;
+        StringBuilder sb= new StringBuilder(sedeTEMP.size() * 50);
+        for (String element :this.sedeTEMP){
+            sb.append(element);
+            sb.append("\n");
+        }
+        return sb.toString();
+    }
+
+    public String getSeccionTEMP() {
+        String aux=null;
+        StringBuilder sb= new StringBuilder(seccionTEMP.size() * 50);
+        for (String element :this.seccionTEMP){
+            sb.append(element);
+            sb.append("\n");
+        }
+        return sb.toString();
+    }
+
     public void agregarLibro(Libro p) {
         this.data.add(p);
     }
+
+    public void agregarSede(Libro p) {
+        this.sedeTEMP.add(p.getSede());
+        }
 
     public void removerLibro(Libro p) {
         Libro index=null;
         for (Libro s : data) {
             if (s.compareTo(p)==0) {
-                System.out.println("Se ha eliminado el libro :"+s.getTitulo());
+                System.out.println("Se ha eliminado el libro: "+s.getTitulo());
                 index=s;
             }
         }
 
         this.data.remove(index);}
+
 
     public void removerLibros(Collection<Libro> libros) {
         this.data.removeAll(libros);

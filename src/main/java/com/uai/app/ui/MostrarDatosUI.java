@@ -8,6 +8,7 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import java.awt.*;
+import java.util.HashSet;
 import java.util.List;
 
 public class MostrarDatosUI extends UAIJFrame {
@@ -23,7 +24,9 @@ public class MostrarDatosUI extends UAIJFrame {
         String[] titles = { "titulo", "autor", "anio", "estante_numero", "estante_seccion", "piso", "edificio",
                 "sede" };
         // obtengo los libros en una matriz
-        List<Libro> data = DataManager.getInstance().getData();
+        //List<Libro> data = DataManager.getInstance().getData();
+        HashSet<Libro> data = DataManager.getInstance().getData();
+        
         String[][] dataTabla = new String[data.size()][4];
         int cont = 0;
         for (Libro p : data) {
