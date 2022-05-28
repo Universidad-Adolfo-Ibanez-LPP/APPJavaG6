@@ -17,9 +17,9 @@ public class BuscarEditarUI extends UAIJFrame {
     private JPanel mainTableConatiner;
     private JTextField textField1;
     private JButton buscarButton;
-    static String response;
+    static String[] response;
 
-    public static String getresponse() {
+    public static String [] getresponse() {
         return response;
     }
 
@@ -45,7 +45,7 @@ public class BuscarEditarUI extends UAIJFrame {
                     System.err.println("Libro no encontrado");
                 }
                 if (buscar!=null){
-                    response=buscar.toString();
+                    response= buscar.getDataToCsv();
                     dispose();
                     UIBuilder.buildUI(MostrarEditar.class);
                 }

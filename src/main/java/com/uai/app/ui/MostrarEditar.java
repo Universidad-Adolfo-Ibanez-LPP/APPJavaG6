@@ -8,22 +8,48 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import java.awt.*;
+import java.util.HashSet;
 import java.util.List;
 
 public class MostrarEditar extends UAIJFrame {
 
     private JPanel mainPanel;
     private JPanel mainTableConatiner;
-    private JTextArea textArea1;
     private JButton editarButton;
 
     public MostrarEditar(String title) {
         super(title);
         this.setMainPanel(mainPanel);
+        String[] titles = { "titulo", "autor", "anio", "estante_numero", "estante_seccion", "piso", "edificio",
+                "sede" };
 
-        String response=null;
+
+
+        HashSet<Libro> data = DataManager.getInstance().getData();
+
+        String[][] dataTabla = new String[1][4];
+
+
+
+
+
+
+        String[] response=null;
+
         response=BuscarEditarUI.getresponse();
-        textArea1.setText(response);
+
+        dataTabla[0] = response;
+
+        TableModel tableModel = new DefaultTableModel(dataTabla, titles);
+
+        JTable table = new JTable(tableModel);
+        mainTableConatiner.setLayout(new BorderLayout());
+        mainTableConatiner.add(new JScrollPane(table), BorderLayout.CENTER);
+
+        mainTableConatiner.add(table.getTableHeader(), BorderLayout.NORTH);
+
+        mainTableConatiner.setVisible(true);
+        mainTableConatiner.setSize(10, 10);
 
     }
 
