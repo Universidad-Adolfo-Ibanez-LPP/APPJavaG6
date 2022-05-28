@@ -68,7 +68,7 @@ public class MainMenuUI extends UAIJFrame {
 
             public void windowClosing(WindowEvent windowEvent) {
                 if (JOptionPane.showConfirmDialog(mainPanel,
-                        "Are you sure you want to close this window?", "Close Window?",
+                        "Está seguro que quiere salir?", "Cerrando programa",
                         JOptionPane.YES_NO_OPTION,
                         JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION){
                     System.exit(0);
