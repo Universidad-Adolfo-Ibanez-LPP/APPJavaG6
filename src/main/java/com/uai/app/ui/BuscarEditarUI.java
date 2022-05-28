@@ -2,6 +2,7 @@ package com.uai.app.ui;
 
 import com.uai.app.dominio.Libro;
 import com.uai.app.exceptions.BookNotFoundException;
+import com.uai.app.exceptions.DataNotLoadedException;
 import com.uai.app.logic.DataManager;
 import com.uai.app.logic.builders.LibroBuilder;
 import com.uai.app.ui.utils.UAIJFrame;
@@ -16,9 +17,10 @@ public class BuscarEditarUI extends UAIJFrame {
     private JPanel mainTableConatiner;
     private JTextField textField1;
     private JButton buscarButton;
+    static String response;
 
-    public JTextField getTextField1() {
-        return textField1;
+    public static String getresponse() {
+        return response;
     }
 
     public BuscarEditarUI(String title) {
@@ -30,17 +32,22 @@ public class BuscarEditarUI extends UAIJFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String eleccion = textField1.getText();
-                Libro buscar= null;
+
+                Libro buscar = null;
                 try {
-                    LibroBuilder builder=new LibroBuilder();
+                    LibroBuilder builder = new LibroBuilder();
                     builder.withTitulo(eleccion);
-                    Libro search= builder.build();
+                    Libro search = builder.build();
 
                     buscar = DataManager.getInstance().buscarLibro(search);
-                    UIBuilder.buildUI(MostrarEditar.class);
-                    dispose();
+
                 } catch (BookNotFoundException ex) {
                     System.err.println("Libro no encontrado");
+                }
+                if (buscar!=null){
+                    response=buscar.toString();
+                    dispose();
+                    UIBuilder.buildUI(MostrarEditar.class);
                 }
             }
         });
