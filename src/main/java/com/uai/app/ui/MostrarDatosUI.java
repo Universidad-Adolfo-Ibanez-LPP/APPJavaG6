@@ -20,6 +20,7 @@ public class MostrarDatosUI extends UAIJFrame {
     public MostrarDatosUI(String title) {
         super(title);
         this.setMainPanel(mainPanel);
+        this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 
         String[] titles = { "titulo", "autor", "anio", "estante_numero", "estante_seccion", "piso", "edificio",
                 "sede" };

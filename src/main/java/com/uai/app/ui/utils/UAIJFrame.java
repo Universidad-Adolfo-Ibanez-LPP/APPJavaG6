@@ -24,5 +24,6 @@ public class UAIJFrame extends JFrame {
         this.setSize(800,800);
         this.pack();
         this.setVisible(true);
+        setLocationRelativeTo(null); //Añado esto porque me da toc que se abra en la esquina
     }
 }

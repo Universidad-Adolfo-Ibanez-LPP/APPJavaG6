@@ -19,14 +19,11 @@ public class MainMenuUI extends UAIJFrame {
     private JButton guardarButton;
     private JButton agregarButton;
 
-
-
     public MainMenuUI(String title) {
         super(title);
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         this.setMainPanel(mainPanel);
-
-
+        this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 
         mostrarDatosButton.addActionListener(new ActionListener() {
             @Override
@@ -51,6 +48,7 @@ public class MainMenuUI extends UAIJFrame {
         guardarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                App.saveData();
                 UIBuilder.buildUI(GuardarUI.class);
             }
 
@@ -70,7 +68,7 @@ public class MainMenuUI extends UAIJFrame {
                 if (JOptionPane.showConfirmDialog(mainPanel,
                         "Está seguro que quiere salir?", "Cerrando programa",
                         JOptionPane.YES_NO_OPTION,
-                        JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION){
+                        JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
                     System.exit(0);
 
                 }

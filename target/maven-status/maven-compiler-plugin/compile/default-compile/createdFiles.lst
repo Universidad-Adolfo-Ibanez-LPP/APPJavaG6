@@ -25,6 +25,7 @@ com\uai\app\ui\MainMenuUI$2.class
 com\uai\app\ui\MainMenuUI$5.class
 com\uai\app\ui\MainMenuUI.class
 com\uai\app\ui\utils\UIBuilder$1.class
+com\uai\app\ui\GuardarUI$1.class
 com\uai\app\logic\SearchManager.class
 com\uai\app\exceptions\DataNotLoadedException.class
 com\uai\app\logic\DataManager.class
