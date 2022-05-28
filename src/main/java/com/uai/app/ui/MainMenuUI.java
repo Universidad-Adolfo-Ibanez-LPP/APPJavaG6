@@ -22,8 +22,8 @@ public class MainMenuUI extends UAIJFrame {
 
     public MainMenuUI(String title) {
         super(title);
-
         this.setMainPanel(mainPanel);
+        this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 
         mostrarDatosButton.addActionListener(new ActionListener() {
             @Override
@@ -48,6 +48,7 @@ public class MainMenuUI extends UAIJFrame {
         guardarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                App.saveData();
                 UIBuilder.buildUI(GuardarUI.class);
             }
 

@@ -25,5 +25,6 @@ public class UAIJFrame extends JFrame {
         this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         this.pack();
         this.setVisible(true);
+        setLocationRelativeTo(null); //Añado esto porque me da toc que se abra en la esquina
     }
 }
