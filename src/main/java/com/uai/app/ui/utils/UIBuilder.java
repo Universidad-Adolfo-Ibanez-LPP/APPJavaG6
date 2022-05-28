@@ -34,7 +34,6 @@ public class UIBuilder {
                 try {
                     UAIJFrame ui = (UAIJFrame) jFrame.getDeclaredConstructors()[0].newInstance(jFrame.getCanonicalName());
                     ui.showUI();
-                    ui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 } catch (InstantiationException e) {
                     e.printStackTrace();
                 } catch (IllegalAccessException e) {

@@ -20,10 +20,13 @@ public class MainMenuUI extends UAIJFrame {
     private JButton agregarButton;
 
 
+
     public MainMenuUI(String title) {
         super(title);
-
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         this.setMainPanel(mainPanel);
+
+
 
         mostrarDatosButton.addActionListener(new ActionListener() {
             @Override
@@ -61,12 +64,18 @@ public class MainMenuUI extends UAIJFrame {
         });
 
         this.addWindowListener(new WindowAdapter() {
+            @Override
 
-            public void windowClosing(WindowEvent e) {
-                super.windowClosing(e);
-                App.saveData();
-                System.out.println("Terminado");
+            public void windowClosing(WindowEvent windowEvent) {
+                if (JOptionPane.showConfirmDialog(mainPanel,
+                        "Are you sure you want to close this window?", "Close Window?",
+                        JOptionPane.YES_NO_OPTION,
+                        JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION){
+                    System.exit(0);
+
+                }
             }
         });
+
     }
 }

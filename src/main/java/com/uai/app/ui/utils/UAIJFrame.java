@@ -22,7 +22,6 @@ public class UAIJFrame extends JFrame {
             throw new NotMainPanelLoadedException();
         }
         this.setSize(800,800);
-        this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         this.pack();
         this.setVisible(true);
     }
