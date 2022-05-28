@@ -1,7 +1,8 @@
-package com.uai.app.ui;
+package com.uai.app.ui.mostrarDatos;
 
 import com.uai.app.dominio.Libro;
 import com.uai.app.logic.DataManager;
+import com.uai.app.ui.BuscarEditarUI;
 import com.uai.app.ui.utils.UAIJFrame;
 
 import javax.swing.*;
@@ -9,7 +10,6 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import java.awt.*;
 import java.util.HashSet;
-import java.util.List;
 
 public class MostrarEditar extends UAIJFrame {
 
@@ -36,7 +36,7 @@ public class MostrarEditar extends UAIJFrame {
 
         String[] response=null;
 
-        response=BuscarEditarUI.getresponse();
+        response= BuscarEditarUI.getresponse();
 
         dataTabla[0] = response;
 

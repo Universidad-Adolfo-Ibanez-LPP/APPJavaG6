@@ -1,4 +1,4 @@
-package com.uai.app.ui;
+package com.uai.app.ui.mostrarDatos;
 
 import com.uai.app.dominio.Libro;
 import com.uai.app.logic.DataManager;
@@ -9,7 +9,6 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import java.awt.*;
 import java.util.HashSet;
-import java.util.List;
 
 public class MostrarDatosUI extends UAIJFrame {
 
@@ -20,7 +19,6 @@ public class MostrarDatosUI extends UAIJFrame {
     public MostrarDatosUI(String title) {
         super(title);
         this.setMainPanel(mainPanel);
-        this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 
         String[] titles = { "titulo", "autor", "anio", "estante_numero", "estante_seccion", "piso", "edificio",
                 "sede" };

@@ -1,6 +1,9 @@
 package com.uai.app.ui;
 
 import com.uai.app.App;
+import com.uai.app.ui.agregar.AgregarUI;
+import com.uai.app.ui.eliminar.EliminarUI;
+import com.uai.app.ui.mostrarDatos.MostrarDatosUI;
 import com.uai.app.ui.utils.UAIJFrame;
 import com.uai.app.ui.utils.UIBuilder;
 

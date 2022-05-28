@@ -1,4 +1,4 @@
-package com.uai.app.ui;
+package com.uai.app.ui.agregar;
 
 import com.uai.app.dominio.Libro;
 import com.uai.app.logic.DataManager;
