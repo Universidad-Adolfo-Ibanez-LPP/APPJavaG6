@@ -2,6 +2,7 @@ package com.uai.app.logic;
 
 import com.uai.app.dominio.Libro;
 import com.uai.app.dominio.enums.Tittles;
+import com.uai.app.exceptions.BookNotFoundException;
 import org.apache.commons.text.CaseUtils;
 import org.apache.commons.text.similarity.LevenshteinDistance;
 
@@ -70,5 +71,15 @@ public class SearchManager {
 
         }
         return ciudadanos;
+    }
+
+    public Libro buscarLibro(Libro titulo) throws BookNotFoundException {
+        HashSet<Libro> data=DataManager.getInstance().getData();
+        for (Libro s : data) {
+            if (s.compareTo(titulo) == 0) {
+                return s;
+            }
+        }
+        throw new BookNotFoundException();
     }
 }

@@ -2,6 +2,7 @@ package com.uai.app.ui.agregar;
 
 import com.uai.app.dominio.Libro;
 import com.uai.app.logic.DataManager;
+import com.uai.app.logic.Data_adder;
 import com.uai.app.logic.builders.LibroBuilder;
 import com.uai.app.ui.utils.UAIJFrame;
 import com.uai.app.ui.utils.UIBuilder;
@@ -21,7 +22,7 @@ public class AgregarSedeUI extends UAIJFrame {
         super(title);
         this.setMainPanel(mainPanel);
 
-        String sedesstring = DataManager.getInstance().getSedeTEMP();
+        String sedesstring = DataManager.getInstance().getSedeTEMPString();
 
         textArea1.setText(sedesstring);
         confirmarButton.addActionListener(new ActionListener() {
@@ -31,7 +32,7 @@ public class AgregarSedeUI extends UAIJFrame {
                 LibroBuilder builder=new LibroBuilder();
                 builder.withSede(eleccion);
                 Libro agregar= builder.build();
-                DataManager.getInstance().agregarSede(agregar);
+                Data_adder.agregarSede(agregar);
                 dispose();
                 UIBuilder.buildUI(AgregarSedeUI.class);
             }

@@ -2,6 +2,7 @@ package com.uai.app.ui.mostrarDatos;
 
 import com.uai.app.dominio.Libro;
 import com.uai.app.logic.DataManager;
+import com.uai.app.logic.Data_adder;
 import com.uai.app.logic.builders.LibroBuilder;
 import com.uai.app.ui.BuscarEditarUI;
 import com.uai.app.ui.utils.UAIJFrame;
@@ -77,7 +78,7 @@ public class MostrarEditar extends UAIJFrame implements CellEditorListener{
                     builder.withEdificio(edificio);
                     builder.withSede(sede);
                     Libro agregar = builder.build();
-                    DataManager.getInstance().overwrite(origin, agregar);
+                    Data_adder.overwrite(origin, agregar);
                     dispose();
                 }
             }

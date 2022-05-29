@@ -2,6 +2,7 @@ package com.uai.app.ui.eliminar;
 import com.uai.app.dominio.Libro;
 import com.uai.app.exceptions.DataNotLoadedException;
 import com.uai.app.logic.DataManager;
+import com.uai.app.logic.Data_remover;
 import com.uai.app.logic.builders.LibroBuilder;
 import com.uai.app.ui.utils.UAIJFrame;
 import com.uai.app.ui.utils.UIBuilder;
@@ -33,7 +34,7 @@ public class EliminarLibroUI extends UAIJFrame{
                 LibroBuilder builder=new LibroBuilder();
                 builder.withTitulo(eleccion);
                 Libro eliminar= builder.build();
-                aux=DataManager.getInstance().removerLibro(eliminar);
+                aux= Data_remover.removerLibro(eliminar);
                 if (aux==1) {
                     dispose();
                     System.out.println("Se ha eliminado el libro: " + eleccion);

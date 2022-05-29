@@ -3,6 +3,7 @@ package com.uai.app.ui;
 import com.uai.app.dominio.Libro;
 import com.uai.app.exceptions.BookNotFoundException;
 import com.uai.app.logic.DataManager;
+import com.uai.app.logic.SearchManager;
 import com.uai.app.logic.builders.LibroBuilder;
 import com.uai.app.ui.mostrarDatos.MostrarEditar;
 import com.uai.app.ui.utils.UAIJFrame;
@@ -33,7 +34,7 @@ public class BuscarEditarUI extends UAIJFrame {
         String[] titles = { "titulo", "autor", "anio", "estante_numero", "estante_seccion", "piso", "edificio",
                 "sede" };
         buscar=null;
-        
+
         buscarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -44,7 +45,7 @@ public class BuscarEditarUI extends UAIJFrame {
                     builder.withTitulo(eleccion);
                     Libro search = builder.build();
 
-                    buscar = DataManager.getInstance().buscarLibro(search);
+                    buscar = SearchManager.getInstance().buscarLibro(search);
 
                 } catch (BookNotFoundException ex) {
                     System.err.println("Libro no encontrado");
