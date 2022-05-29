@@ -88,7 +88,7 @@ public class SearchManager {
         String title=null;
         for (Libro s:data) {
             title = s.getTitulo();
-            if (lv.apply(titulo, title) < 4) {
+            if (lv.apply(titulo, title) < 3) {
                 return title;
             }
         }
