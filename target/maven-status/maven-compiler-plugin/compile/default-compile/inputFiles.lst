@@ -1,25 +1,29 @@
-C:\Users\Nico Soto\Desktop\Universidad\Semestre 5\Lenguajes y paradigmas\APPJavaG6\src\main\java\com\uai\app\ui\MostrarEditar.java
-C:\Users\Nico Soto\Desktop\Universidad\Semestre 5\Lenguajes y paradigmas\APPJavaG6\src\main\java\com\uai\app\ui\AgregarSedeUI.java
-C:\Users\Nico Soto\Desktop\Universidad\Semestre 5\Lenguajes y paradigmas\APPJavaG6\src\main\java\com\uai\app\ui\GuardarUI.java
-C:\Users\Nico Soto\Desktop\Universidad\Semestre 5\Lenguajes y paradigmas\APPJavaG6\src\main\java\com\uai\app\files\FileManager.java
-C:\Users\Nico Soto\Desktop\Universidad\Semestre 5\Lenguajes y paradigmas\APPJavaG6\src\main\java\com\uai\app\ui\MostrarDatosUI.java
-C:\Users\Nico Soto\Desktop\Universidad\Semestre 5\Lenguajes y paradigmas\APPJavaG6\src\main\java\com\uai\app\exceptions\DataNotLoadedException.java
-C:\Users\Nico Soto\Desktop\Universidad\Semestre 5\Lenguajes y paradigmas\APPJavaG6\src\main\java\com\uai\app\ui\utils\AppUtils.java
-C:\Users\Nico Soto\Desktop\Universidad\Semestre 5\Lenguajes y paradigmas\APPJavaG6\src\main\java\com\uai\app\logic\DataManager.java
-C:\Users\Nico Soto\Desktop\Universidad\Semestre 5\Lenguajes y paradigmas\APPJavaG6\src\main\java\com\uai\app\exceptions\AlreadyExistsException.java
-C:\Users\Nico Soto\Desktop\Universidad\Semestre 5\Lenguajes y paradigmas\APPJavaG6\src\main\java\com\uai\app\App.java
-C:\Users\Nico Soto\Desktop\Universidad\Semestre 5\Lenguajes y paradigmas\APPJavaG6\src\main\java\com\uai\app\exceptions\BookWithoutAdressException.java
-C:\Users\Nico Soto\Desktop\Universidad\Semestre 5\Lenguajes y paradigmas\APPJavaG6\src\main\java\com\uai\app\ui\utils\UIBuilder.java
-C:\Users\Nico Soto\Desktop\Universidad\Semestre 5\Lenguajes y paradigmas\APPJavaG6\src\main\java\com\uai\app\exceptions\CSVNotFoundException.java
-C:\Users\Nico Soto\Desktop\Universidad\Semestre 5\Lenguajes y paradigmas\APPJavaG6\src\main\java\com\uai\app\logic\SearchManager.java
-C:\Users\Nico Soto\Desktop\Universidad\Semestre 5\Lenguajes y paradigmas\APPJavaG6\src\main\java\com\uai\app\logic\builders\LibroBuilder.java
-C:\Users\Nico Soto\Desktop\Universidad\Semestre 5\Lenguajes y paradigmas\APPJavaG6\src\main\java\com\uai\app\ui\utils\UAIJFrame.java
-C:\Users\Nico Soto\Desktop\Universidad\Semestre 5\Lenguajes y paradigmas\APPJavaG6\src\main\java\com\uai\app\ui\AgregarUI.java
-C:\Users\Nico Soto\Desktop\Universidad\Semestre 5\Lenguajes y paradigmas\APPJavaG6\src\main\java\com\uai\app\ui\MainMenuUI.java
-C:\Users\Nico Soto\Desktop\Universidad\Semestre 5\Lenguajes y paradigmas\APPJavaG6\src\main\java\com\uai\app\dominio\enums\Tittles.java
-C:\Users\Nico Soto\Desktop\Universidad\Semestre 5\Lenguajes y paradigmas\APPJavaG6\src\main\java\com\uai\app\exceptions\NotMainPanelLoadedException.java
-C:\Users\Nico Soto\Desktop\Universidad\Semestre 5\Lenguajes y paradigmas\APPJavaG6\src\main\java\com\uai\app\ui\BuscarEditarUI.java
-C:\Users\Nico Soto\Desktop\Universidad\Semestre 5\Lenguajes y paradigmas\APPJavaG6\src\main\java\com\uai\app\dominio\Libro.java
-C:\Users\Nico Soto\Desktop\Universidad\Semestre 5\Lenguajes y paradigmas\APPJavaG6\src\main\java\com\uai\app\ui\EliminarLibroUI.java
-C:\Users\Nico Soto\Desktop\Universidad\Semestre 5\Lenguajes y paradigmas\APPJavaG6\src\main\java\com\uai\app\exceptions\BookNotFoundException.java
-C:\Users\Nico Soto\Desktop\Universidad\Semestre 5\Lenguajes y paradigmas\APPJavaG6\src\main\java\com\uai\app\ui\EliminarUI.java
+/Users/cristobalsepulveda/Desktop/Universidad/3er Año/Lenguajes y paradigmas de programacion/app2/APPJavaG6/src/main/java/com/uai/app/exceptions/DataNotLoadedException.java
+/Users/cristobalsepulveda/Desktop/Universidad/3er Año/Lenguajes y paradigmas de programacion/app2/APPJavaG6/src/main/java/com/uai/app/ui/BuscarEditarUI.java
+/Users/cristobalsepulveda/Desktop/Universidad/3er Año/Lenguajes y paradigmas de programacion/app2/APPJavaG6/src/main/java/com/uai/app/logic/Data_remover.java
+/Users/cristobalsepulveda/Desktop/Universidad/3er Año/Lenguajes y paradigmas de programacion/app2/APPJavaG6/src/main/java/com/uai/app/exceptions/NotMainPanelLoadedException.java
+/Users/cristobalsepulveda/Desktop/Universidad/3er Año/Lenguajes y paradigmas de programacion/app2/APPJavaG6/src/main/java/com/uai/app/exceptions/AlreadyExistsException.java
+/Users/cristobalsepulveda/Desktop/Universidad/3er Año/Lenguajes y paradigmas de programacion/app2/APPJavaG6/src/main/java/com/uai/app/ui/utils/UAIJFrame.java
+/Users/cristobalsepulveda/Desktop/Universidad/3er Año/Lenguajes y paradigmas de programacion/app2/APPJavaG6/src/main/java/com/uai/app/ui/utils/AppUtils.java
+/Users/cristobalsepulveda/Desktop/Universidad/3er Año/Lenguajes y paradigmas de programacion/app2/APPJavaG6/src/main/java/com/uai/app/logic/Data_adder.java
+/Users/cristobalsepulveda/Desktop/Universidad/3er Año/Lenguajes y paradigmas de programacion/app2/APPJavaG6/src/main/java/com/uai/app/ui/agregar/AgregarSedeUI.java
+/Users/cristobalsepulveda/Desktop/Universidad/3er Año/Lenguajes y paradigmas de programacion/app2/APPJavaG6/src/main/java/com/uai/app/exceptions/CSVNotFoundException.java
+/Users/cristobalsepulveda/Desktop/Universidad/3er Año/Lenguajes y paradigmas de programacion/app2/APPJavaG6/src/main/java/com/uai/app/App.java
+/Users/cristobalsepulveda/Desktop/Universidad/3er Año/Lenguajes y paradigmas de programacion/app2/APPJavaG6/src/main/java/com/uai/app/logic/SearchManager.java
+/Users/cristobalsepulveda/Desktop/Universidad/3er Año/Lenguajes y paradigmas de programacion/app2/APPJavaG6/src/main/java/com/uai/app/exceptions/BookWithoutAdressException.java
+/Users/cristobalsepulveda/Desktop/Universidad/3er Año/Lenguajes y paradigmas de programacion/app2/APPJavaG6/src/main/java/com/uai/app/ui/agregar/AgregarUI.java
+/Users/cristobalsepulveda/Desktop/Universidad/3er Año/Lenguajes y paradigmas de programacion/app2/APPJavaG6/src/main/java/com/uai/app/dominio/enums/Tittles.java
+/Users/cristobalsepulveda/Desktop/Universidad/3er Año/Lenguajes y paradigmas de programacion/app2/APPJavaG6/src/main/java/com/uai/app/exceptions/BookNotFoundException.java
+/Users/cristobalsepulveda/Desktop/Universidad/3er Año/Lenguajes y paradigmas de programacion/app2/APPJavaG6/src/main/java/com/uai/app/ui/mostrarDatos/MostrarDatosUI.java
+/Users/cristobalsepulveda/Desktop/Universidad/3er Año/Lenguajes y paradigmas de programacion/app2/APPJavaG6/src/main/java/com/uai/app/files/FileManager.java
+/Users/cristobalsepulveda/Desktop/Universidad/3er Año/Lenguajes y paradigmas de programacion/app2/APPJavaG6/src/main/java/com/uai/app/ui/agregar/AgregarPisoUI.java
+/Users/cristobalsepulveda/Desktop/Universidad/3er Año/Lenguajes y paradigmas de programacion/app2/APPJavaG6/src/main/java/com/uai/app/logic/builders/LibroBuilder.java
+/Users/cristobalsepulveda/Desktop/Universidad/3er Año/Lenguajes y paradigmas de programacion/app2/APPJavaG6/src/main/java/com/uai/app/ui/agregar/AgregarSeccionUI.java
+/Users/cristobalsepulveda/Desktop/Universidad/3er Año/Lenguajes y paradigmas de programacion/app2/APPJavaG6/src/main/java/com/uai/app/ui/eliminar/EliminarUI.java
+/Users/cristobalsepulveda/Desktop/Universidad/3er Año/Lenguajes y paradigmas de programacion/app2/APPJavaG6/src/main/java/com/uai/app/ui/eliminar/EliminarLibroUI.java
+/Users/cristobalsepulveda/Desktop/Universidad/3er Año/Lenguajes y paradigmas de programacion/app2/APPJavaG6/src/main/java/com/uai/app/ui/mostrarDatos/MostrarEditar.java
+/Users/cristobalsepulveda/Desktop/Universidad/3er Año/Lenguajes y paradigmas de programacion/app2/APPJavaG6/src/main/java/com/uai/app/ui/GuardarUI.java
+/Users/cristobalsepulveda/Desktop/Universidad/3er Año/Lenguajes y paradigmas de programacion/app2/APPJavaG6/src/main/java/com/uai/app/dominio/Libro.java
+/Users/cristobalsepulveda/Desktop/Universidad/3er Año/Lenguajes y paradigmas de programacion/app2/APPJavaG6/src/main/java/com/uai/app/ui/utils/UIBuilder.java
+/Users/cristobalsepulveda/Desktop/Universidad/3er Año/Lenguajes y paradigmas de programacion/app2/APPJavaG6/src/main/java/com/uai/app/logic/DataManager.java
+/Users/cristobalsepulveda/Desktop/Universidad/3er Año/Lenguajes y paradigmas de programacion/app2/APPJavaG6/src/main/java/com/uai/app/ui/MainMenuUI.java

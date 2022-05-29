@@ -22,6 +22,17 @@ public class AgregarUI extends UAIJFrame {
             @Override
             public void actionPerformed(ActionEvent e) {UIBuilder.buildUI(AgregarSedeUI.class);}
         });
+        secciónButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {UIBuilder.buildUI(AgregarSeccionUI.class);}
+
+        });
+        pisoButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {UIBuilder.buildUI(AgregarPisoUI.class);}
+
+
+        });
     }
 
 

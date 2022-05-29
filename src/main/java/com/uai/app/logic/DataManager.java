@@ -96,8 +96,8 @@ public class DataManager {
 
     public String getPisoTEMPString() {
         Integer aux=null;
-        StringBuilder sb= new StringBuilder(sedeTEMP.size() * 50);
-        for (String element :this.sedeTEMP){
+        StringBuilder sb= new StringBuilder(pisoTEMP.size() * 50);
+        for (Integer element :this.pisoTEMP){
             sb.append(element);
             sb.append("\n");
         }
