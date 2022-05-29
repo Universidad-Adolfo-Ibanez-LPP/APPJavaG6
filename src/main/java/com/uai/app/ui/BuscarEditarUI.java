@@ -18,6 +18,7 @@ public class BuscarEditarUI extends UAIJFrame {
     private JPanel mainTableConatiner;
     private JTextField textField1;
     private JButton buscarButton;
+    private JTextArea textArea1;
     static Libro buscar;
     static String[] response;
 
@@ -31,6 +32,10 @@ public class BuscarEditarUI extends UAIJFrame {
     public BuscarEditarUI(String title) {
         super(title);
         this.setMainPanel(mainPanel);
+
+        String tituloss= DataManager.getInstance().getTitulos();
+        textArea1.setText(tituloss);
+
         String[] titles = { "titulo", "autor", "anio", "estante_numero", "estante_seccion", "piso", "edificio",
                 "sede" };
         buscar=null;
@@ -38,9 +43,10 @@ public class BuscarEditarUI extends UAIJFrame {
         buscarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String eleccion = textField1.getText();
-
                 try {
+                String eleccion_prev = textField1.getText();
+                String eleccion=SearchManager.getInstance().busquedaTitulo(eleccion_prev);
+
                     LibroBuilder builder = new LibroBuilder();
                     builder.withTitulo(eleccion);
                     Libro search = builder.build();
@@ -49,6 +55,9 @@ public class BuscarEditarUI extends UAIJFrame {
 
                 } catch (BookNotFoundException ex) {
                     System.err.println("Libro no encontrado");
+                }
+                  catch (NullPointerException ex) {
+                    System.err.println("La busqueda no arrojó resultados");
                 }
 
                 if (buscar!=null){

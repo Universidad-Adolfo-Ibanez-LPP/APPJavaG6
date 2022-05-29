@@ -12,7 +12,7 @@ public class EliminarUI extends UAIJFrame {
     private JPanel mainPanel;
     private JButton libroButton;
     private JButton sedeButton;
-    private JButton secciónButton;
+    private JButton seccionButton;
     private JButton pisoButton;
 
     public EliminarUI(String title) {
