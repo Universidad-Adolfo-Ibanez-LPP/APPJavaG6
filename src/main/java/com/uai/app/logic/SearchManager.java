@@ -82,4 +82,16 @@ public class SearchManager {
         }
         throw new BookNotFoundException();
     }
+
+    public String busquedaTitulo(String titulo){
+        HashSet<Libro> data=DataManager.getInstance().getData();
+        String title=null;
+        for (Libro s:data) {
+            title = s.getTitulo();
+            if (lv.apply(titulo, title) < 4) {
+                return title;
+            }
+        }
+        return null;
+    }
 }
