@@ -32,6 +32,8 @@ public class BuscarEditarUI extends UAIJFrame {
         this.setMainPanel(mainPanel);
         String[] titles = { "titulo", "autor", "anio", "estante_numero", "estante_seccion", "piso", "edificio",
                 "sede" };
+        buscar=null;
+        
         buscarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -47,6 +49,7 @@ public class BuscarEditarUI extends UAIJFrame {
                 } catch (BookNotFoundException ex) {
                     System.err.println("Libro no encontrado");
                 }
+
                 if (buscar!=null){
                     response= buscar.getDataToCsv();
                     dispose();
