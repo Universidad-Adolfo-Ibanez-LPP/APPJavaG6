@@ -2,6 +2,7 @@ package com.uai.app.ui;
 
 import com.uai.app.App;
 import com.uai.app.ui.agregar.AgregarUI;
+import com.uai.app.ui.cambiar.CambiarUI;
 import com.uai.app.ui.eliminar.EliminarUI;
 import com.uai.app.ui.mostrarDatos.MostrarDatosUI;
 import com.uai.app.ui.utils.UAIJFrame;
@@ -21,6 +22,7 @@ public class MainMenuUI extends UAIJFrame {
     private JButton eliminarButton;
     private JButton guardarButton;
     private JButton agregarButton;
+    private JButton cambiarButton;
 
     public MainMenuUI(String title) {
         super(title);
@@ -48,6 +50,7 @@ public class MainMenuUI extends UAIJFrame {
             }
 
         });
+
         guardarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -60,6 +63,13 @@ public class MainMenuUI extends UAIJFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 UIBuilder.buildUI(AgregarUI.class);
+            }
+
+        });
+        cambiarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                UIBuilder.buildUI(CambiarUI.class);
             }
 
         });
