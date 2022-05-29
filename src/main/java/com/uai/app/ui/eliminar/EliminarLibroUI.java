@@ -23,6 +23,7 @@ public class EliminarLibroUI extends UAIJFrame{
     public EliminarLibroUI(String title) throws DataNotLoadedException {
         super(title);
         this.setMainPanel(mainPanel);
+
         String tituloss= DataManager.getInstance().getTitulos();
         textArea1.setText(tituloss);
 

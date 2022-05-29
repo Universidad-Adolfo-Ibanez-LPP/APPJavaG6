@@ -18,6 +18,7 @@ public class BuscarEditarUI extends UAIJFrame {
     private JPanel mainTableConatiner;
     private JTextField textField1;
     private JButton buscarButton;
+    private JTextArea textArea1;
     static Libro buscar;
     static String[] response;
 
@@ -31,6 +32,10 @@ public class BuscarEditarUI extends UAIJFrame {
     public BuscarEditarUI(String title) {
         super(title);
         this.setMainPanel(mainPanel);
+
+        String tituloss= DataManager.getInstance().getTitulos();
+        textArea1.setText(tituloss);
+
         String[] titles = { "titulo", "autor", "anio", "estante_numero", "estante_seccion", "piso", "edificio",
                 "sede" };
         buscar=null;
