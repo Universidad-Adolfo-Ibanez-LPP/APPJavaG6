@@ -33,6 +33,14 @@ public class AgregarUI extends UAIJFrame {
 
 
         });
+
+        libroButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {UIBuilder.buildUI(AgregarLibroUI.class);}
+
+
+        });
+
     }
 
 
