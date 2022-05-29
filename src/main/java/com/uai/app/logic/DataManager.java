@@ -168,16 +168,19 @@ public class DataManager {
         this.sedeTEMP.add(p.getSede());
         }
 
-    public void removerLibro(Libro p) {
-        Libro index=null;
+    public Integer removerLibro(Libro p) {
+        Libro index = null;
+        Integer num = 0;
         for (Libro s : data) {
-            if (s.compareTo(p)==0) {
-                System.out.println("Se ha eliminado el libro: "+s.getTitulo());
-                index=s;
+            if (s.compareTo(p) == 0) {
+                index = s;
+                num = 1;
             }
         }
 
-        this.data.remove(index);}
+        this.data.remove(index);
+        return num;
+    }
 
 
     public void removerLibros(Collection<Libro> libros) {
@@ -195,4 +198,9 @@ public class DataManager {
         throw new BookNotFoundException();
     }
 
+   public void overwrite(Libro origin,Libro nuevo) {
+       removerLibro(origin);
+       agregarLibro(nuevo);
+       System.out.println("Se han realizado los cambios");
+    }
 }

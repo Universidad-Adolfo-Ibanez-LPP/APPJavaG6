@@ -28,13 +28,17 @@ public class EliminarLibroUI extends UAIJFrame{
             ConfirmarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Integer aux;
                 String eleccion = textField1.getText();
                 LibroBuilder builder=new LibroBuilder();
                 builder.withTitulo(eleccion);
                 Libro eliminar= builder.build();
-                DataManager.getInstance().removerLibro(eliminar);
-                dispose();
-                UIBuilder.buildUI(EliminarLibroUI.class);
+                aux=DataManager.getInstance().removerLibro(eliminar);
+                if (aux==1) {
+                    dispose();
+                    System.out.println("Se ha eliminado el libro: " + eleccion);
+                    UIBuilder.buildUI(EliminarLibroUI.class);
+                }
             }
         });
 

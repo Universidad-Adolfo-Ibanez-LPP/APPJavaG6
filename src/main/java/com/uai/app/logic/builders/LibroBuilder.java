@@ -31,13 +31,13 @@ public class LibroBuilder {
     }
 
     public LibroBuilder withEstante_numero(int estante_numero) {
-        this.estante_numero = LibroBuilder.this.estante_numero;
+        this.estante_numero = estante_numero;
         return this;
     }
 
 
     public LibroBuilder withEstante_seccion(String estante_seccion) {
-        this.estante_seccion = LibroBuilder.this.estante_seccion;
+        this.estante_seccion = estante_seccion;
         return this;
     }
 

@@ -17,10 +17,14 @@ public class BuscarEditarUI extends UAIJFrame {
     private JPanel mainTableConatiner;
     private JTextField textField1;
     private JButton buscarButton;
+    static Libro buscar;
     static String[] response;
 
     public static String [] getresponse() {
         return response;
+    }
+    public static Libro getbuscar() {
+        return buscar;
     }
 
     public BuscarEditarUI(String title) {
@@ -33,7 +37,6 @@ public class BuscarEditarUI extends UAIJFrame {
             public void actionPerformed(ActionEvent e) {
                 String eleccion = textField1.getText();
 
-                Libro buscar = null;
                 try {
                     LibroBuilder builder = new LibroBuilder();
                     builder.withTitulo(eleccion);
