@@ -19,7 +19,11 @@ public class EliminarLibroUI extends UAIJFrame{
     private JTextField textField1;
     private JScrollPane Jscroll;
     private JTextArea textArea1;
+    static String eleccion2;
 
+    public static String getEleccion2() {
+        return eleccion2;
+    }
 
     public EliminarLibroUI(String title) throws DataNotLoadedException {
         super(title);
@@ -41,14 +45,18 @@ public class EliminarLibroUI extends UAIJFrame{
                     aux = Data_remover.removerLibro(eliminar);
                     if (aux == 1) {
                         dispose();
-                        System.out.println("Se ha eliminado el libro: " + eleccion);
-                        UIBuilder.buildUI(EliminarLibroUI.class);
+                        eleccion2 = eleccion;
+                        UIBuilder.buildUI(EliminarOkUI.class);
+
                     }
                 } catch (NullPointerException ex) {
                     System.err.println("No se encontro el libro a eliminar");
                 }
             }
         });
+
+
+
 
     }
 }
