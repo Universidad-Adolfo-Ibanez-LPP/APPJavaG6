@@ -72,8 +72,8 @@ public class MostrarEditar extends UAIJFrame implements CellEditorListener{
                             Integer piso = Integer.valueOf(table.getModel().getValueAt(0, 5).toString());
                             String edificio = table.getModel().getValueAt(0, 6).toString();
                             String sede = table.getModel().getValueAt(0, 7).toString();
-                            LibroBuilder builder = new LibroBuilder();
 
+                            LibroBuilder builder = new LibroBuilder();
                             builder.withTitulo(nombre);
                             builder.withAutor(autor);
                             builder.withAnio(anio);
@@ -84,6 +84,19 @@ public class MostrarEditar extends UAIJFrame implements CellEditorListener{
                             builder.withSede(sede);
                             Libro agregar = builder.build();
                             Data_adder.overwrite(origin, agregar);
+
+                            LibroBuilder buildersec = new LibroBuilder();
+                            LibroBuilder buildersed = new LibroBuilder();
+                            LibroBuilder builderpis = new LibroBuilder();
+                            buildersec.withEstante_seccion(estante_seccion);
+                            buildersed.withSede(sede);
+                            builderpis.withPiso(piso);
+                            Libro agregarsec = buildersec.build();
+                            Libro agregarsed = buildersed.build();
+                            Libro agregarpis = builderpis.build();
+                            Data_adder.agregarSeccion(agregarsec);
+                            Data_adder.agregarSede(agregarsed);
+                            Data_adder.agregarPiso(agregarpis);
                             dispose();
                         }
                         else{
