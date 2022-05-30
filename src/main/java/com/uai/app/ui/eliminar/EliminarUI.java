@@ -12,7 +12,7 @@ public class EliminarUI extends UAIJFrame {
     private JPanel mainPanel;
     private JButton libroButton;
     private JButton sedeButton;
-    private JButton secciónButton;
+    private JButton seccionButton;
     private JButton pisoButton;
 
     public EliminarUI(String title) {
@@ -25,5 +25,21 @@ public class EliminarUI extends UAIJFrame {
                     UIBuilder.buildUI(EliminarLibroUI.class);
                 }
             });
-        }
+        sedeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {UIBuilder.buildUI(EliminarSedeUI.class);}
+        });
+        pisoButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {UIBuilder.buildUI(EliminarPisoUI.class);
+
+            }
+        });
+        seccionButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {UIBuilder.buildUI(EliminarSeccionUI.class);
+
+            }
+        });
+    }
     }

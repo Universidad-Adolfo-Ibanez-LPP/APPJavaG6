@@ -34,7 +34,7 @@ public class AgregarSeccionUI extends UAIJFrame {
                 Libro agregar= builder.build();
                 Data_adder.agregarSeccion(agregar);
                 dispose();
-                UIBuilder.buildUI(AgregarSeccionUI.class);
+                UIBuilder.buildUI(AgregarOkUI.class);
             }
         });
     }

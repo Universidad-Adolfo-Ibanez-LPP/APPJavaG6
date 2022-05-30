@@ -34,7 +34,7 @@ public class AgregarSedeUI extends UAIJFrame {
                 Libro agregar= builder.build();
                 Data_adder.agregarSede(agregar);
                 dispose();
-                UIBuilder.buildUI(AgregarSedeUI.class);
+                UIBuilder.buildUI(AgregarOkUI.class);
             }
         });
     }

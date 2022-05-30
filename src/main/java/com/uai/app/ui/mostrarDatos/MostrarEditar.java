@@ -57,29 +57,52 @@ public class MostrarEditar extends UAIJFrame implements CellEditorListener{
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (change) {
-                    Libro origin = BuscarEditarUI.getbuscar();
+                    JPasswordField pf = new JPasswordField();
+                    int okCxl = JOptionPane.showConfirmDialog(null, pf, "Ingrese la clave de administrador", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
+                    if (okCxl == JOptionPane.OK_OPTION) {
+                        String password = new String(pf.getPassword());
+                        if (password.equals("123")) {
+                            Libro origin = BuscarEditarUI.getbuscar();
 
-                    String nombre = table.getModel().getValueAt(0, 0).toString();
-                    String autor = table.getModel().getValueAt(0, 1).toString();
-                    Integer anio = Integer.valueOf(table.getModel().getValueAt(0, 2).toString());
-                    Integer estante_numero = Integer.valueOf(table.getModel().getValueAt(0, 3).toString());
-                    String estante_seccion = table.getModel().getValueAt(0, 4).toString();
-                    Integer piso = Integer.valueOf(table.getModel().getValueAt(0, 5).toString());
-                    String edificio = table.getModel().getValueAt(0, 6).toString();
-                    String sede = table.getModel().getValueAt(0, 7).toString();
-                    LibroBuilder builder = new LibroBuilder();
+                            String nombre = table.getModel().getValueAt(0, 0).toString();
+                            String autor = table.getModel().getValueAt(0, 1).toString();
+                            Integer anio = Integer.valueOf(table.getModel().getValueAt(0, 2).toString());
+                            Integer estante_numero = Integer.valueOf(table.getModel().getValueAt(0, 3).toString());
+                            String estante_seccion = table.getModel().getValueAt(0, 4).toString();
+                            Integer piso = Integer.valueOf(table.getModel().getValueAt(0, 5).toString());
+                            String edificio = table.getModel().getValueAt(0, 6).toString();
+                            String sede = table.getModel().getValueAt(0, 7).toString();
 
-                    builder.withTitulo(nombre);
-                    builder.withAutor(autor);
-                    builder.withAnio(anio);
-                    builder.withEstante_numero(estante_numero);
-                    builder.withEstante_seccion(estante_seccion);
-                    builder.withPiso(piso);
-                    builder.withEdificio(edificio);
-                    builder.withSede(sede);
-                    Libro agregar = builder.build();
-                    Data_adder.overwrite(origin, agregar);
-                    dispose();
+                            LibroBuilder builder = new LibroBuilder();
+                            builder.withTitulo(nombre);
+                            builder.withAutor(autor);
+                            builder.withAnio(anio);
+                            builder.withEstante_numero(estante_numero);
+                            builder.withEstante_seccion(estante_seccion);
+                            builder.withPiso(piso);
+                            builder.withEdificio(edificio);
+                            builder.withSede(sede);
+                            Libro agregar = builder.build();
+                            Data_adder.overwrite(origin, agregar);
+
+                            LibroBuilder buildersec = new LibroBuilder();
+                            LibroBuilder buildersed = new LibroBuilder();
+                            LibroBuilder builderpis = new LibroBuilder();
+                            buildersec.withEstante_seccion(estante_seccion);
+                            buildersed.withSede(sede);
+                            builderpis.withPiso(piso);
+                            Libro agregarsec = buildersec.build();
+                            Libro agregarsed = buildersed.build();
+                            Libro agregarpis = builderpis.build();
+                            Data_adder.agregarSeccion(agregarsec);
+                            Data_adder.agregarSede(agregarsed);
+                            Data_adder.agregarPiso(agregarpis);
+                            dispose();
+                        }
+                        else{
+                            System.out.println("Clave incorrecta");
+                        }
+                    }
                 }
             }
         });

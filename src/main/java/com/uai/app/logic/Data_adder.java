@@ -1,6 +1,9 @@
 package com.uai.app.logic;
 
 import com.uai.app.dominio.Libro;
+import com.uai.app.exceptions.BookNotFoundException;
+import com.uai.app.exceptions.LibroNoEncontradoUI;
+import com.uai.app.ui.utils.UIBuilder;
 
 import java.util.HashSet;
 
@@ -31,8 +34,14 @@ public class Data_adder {
     }
 
     public static void overwrite(Libro origin, Libro nuevo) {
-        Data_remover.removerLibro(origin);
-        agregarLibro(nuevo);
-        System.out.println("Se han realizado los cambios");
+        try {
+            Data_remover.removerLibro(origin);
+            agregarLibro(nuevo);
+            System.out.println("Se han realizado los cambios");
+        }
+        catch (BookNotFoundException ex){
+            System.err.println("No se encontro el libro a eliminar");
+            UIBuilder.buildUI(LibroNoEncontradoUI.class);
+        }
     }
 }
