@@ -34,7 +34,8 @@ public class AgregarPisoUI extends UAIJFrame {
                 Libro agregar= builder.build();
                 Data_adder.agregarPiso(agregar);
                 dispose();
-                UIBuilder.buildUI(AgregarPisoUI.class);
+                UIBuilder.buildUI(AgregarOkUI.class);
+
             }
         });
     }
