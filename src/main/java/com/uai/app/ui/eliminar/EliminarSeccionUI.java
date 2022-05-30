@@ -1,8 +1,7 @@
 package com.uai.app.ui.eliminar;
 
 import com.uai.app.dominio.Libro;
-import com.uai.app.exceptions.DataNotLoadedException;
-import com.uai.app.exceptions.LibroAsociadoException;
+import com.uai.app.exceptions.*;
 import com.uai.app.logic.DataManager;
 import com.uai.app.logic.Data_remover;
 import com.uai.app.logic.Verificador;
@@ -42,6 +41,12 @@ public class EliminarSeccionUI extends UAIJFrame {
                     }
                 } catch (LibroAsociadoException ex) {
                     System.err.println("No es posible eliminarlo pues tiene un libro asociado");
+                    UIBuilder.buildUI(EliminarNoOkUI.class);
+                }
+                catch (SeccionNotFoundException ex){
+                    System.err.println("No se encontró la sección a eliminar");
+                    UIBuilder.buildUI(SeccionNotFoundOkUI.class);
+
                 }
             }
 

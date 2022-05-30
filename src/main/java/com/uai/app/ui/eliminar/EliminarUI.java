@@ -35,7 +35,7 @@ public class EliminarUI extends UAIJFrame {
 
             }
         });
-        secciónButton.addActionListener(new ActionListener() {
+        seccionButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {UIBuilder.buildUI(EliminarSeccionUI.class);
 

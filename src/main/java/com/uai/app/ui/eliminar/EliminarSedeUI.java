@@ -1,8 +1,7 @@
 package com.uai.app.ui.eliminar;
 
 import com.uai.app.dominio.Libro;
-import com.uai.app.exceptions.DataNotLoadedException;
-import com.uai.app.exceptions.LibroAsociadoException;
+import com.uai.app.exceptions.*;
 import com.uai.app.logic.DataManager;
 import com.uai.app.logic.Data_remover;
 import com.uai.app.logic.Verificador;
@@ -34,18 +33,25 @@ public class EliminarSedeUI extends UAIJFrame {
                 LibroBuilder builder=new LibroBuilder();
                 builder.withSede(eleccion);
                 Libro eliminar= builder.build();
-                    try {
-                        Verificador.Verificarsede(eliminar);
+                try {
+                    Verificador.Verificarsede(eliminar);
                     aux= Data_remover.removerSede(eliminar);
-                if (aux==1) {
-                    dispose();
-                    System.out.println("Se ha eliminado la sede: " + eleccion);
-                    UIBuilder.buildUI(EliminarSedeUI.class);
-                }
-            } catch (LibroAsociadoException ex) {
-                        System.err.println("No es posible eliminarlo pues tiene un libro asociado");
-            }
+                    if (aux==1) {
+                        dispose();
+                        System.out.println("Se ha eliminado la sede: " + eleccion);
+                        UIBuilder.buildUI(EliminarSedeUI.class);
                     }
+                }
+                catch (LibroAsociadoException ex) {
+                    System.err.println("No es posible eliminarlo pues tiene un libro asociado");
+                    UIBuilder.buildUI(EliminarNoOkUI.class);
+                }
+                catch (SedeNotFoundException ex){
+                    System.err.println("No se encontró la sede a eliminar");
+                    UIBuilder.buildUI(SedeNotFoundOkUI.class);
+
+                }
+            }
 
         });
 

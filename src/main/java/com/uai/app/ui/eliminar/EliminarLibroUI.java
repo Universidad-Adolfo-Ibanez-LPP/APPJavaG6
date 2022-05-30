@@ -1,10 +1,12 @@
 package com.uai.app.ui.eliminar;
 import com.uai.app.dominio.Libro;
+import com.uai.app.exceptions.BookNotFoundException;
 import com.uai.app.exceptions.DataNotLoadedException;
 import com.uai.app.logic.DataManager;
 import com.uai.app.logic.Data_remover;
 import com.uai.app.logic.SearchManager;
 import com.uai.app.logic.builders.LibroBuilder;
+import com.uai.app.exceptions.LibroNoEncontradoUI;
 import com.uai.app.ui.utils.UAIJFrame;
 import com.uai.app.ui.utils.UIBuilder;
 
@@ -19,11 +21,7 @@ public class EliminarLibroUI extends UAIJFrame{
     private JTextField textField1;
     private JScrollPane Jscroll;
     private JTextArea textArea1;
-    static String eleccion2;
 
-    public static String getEleccion2() {
-        return eleccion2;
-    }
 
     public EliminarLibroUI(String title) throws DataNotLoadedException {
         super(title);
@@ -45,12 +43,13 @@ public class EliminarLibroUI extends UAIJFrame{
                     aux = Data_remover.removerLibro(eliminar);
                     if (aux == 1) {
                         dispose();
-                        eleccion2 = eleccion;
                         UIBuilder.buildUI(EliminarOkUI.class);
 
                     }
-                } catch (NullPointerException ex) {
+                } catch (NullPointerException | BookNotFoundException ex) {
                     System.err.println("No se encontro el libro a eliminar");
+                    UIBuilder.buildUI(LibroNoEncontradoUI.class);
+
                 }
             }
         });

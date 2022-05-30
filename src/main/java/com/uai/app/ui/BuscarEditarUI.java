@@ -2,6 +2,7 @@ package com.uai.app.ui;
 
 import com.uai.app.dominio.Libro;
 import com.uai.app.exceptions.BookNotFoundException;
+import com.uai.app.exceptions.LibroNoEncontradoUI;
 import com.uai.app.logic.DataManager;
 import com.uai.app.logic.SearchManager;
 import com.uai.app.logic.builders.LibroBuilder;
@@ -55,9 +56,11 @@ public class BuscarEditarUI extends UAIJFrame {
 
                 } catch (BookNotFoundException ex) {
                     System.err.println("Libro no encontrado");
+                    UIBuilder.buildUI(LibroNoEncontradoUI.class);
                 }
                   catch (NullPointerException ex) {
                     System.err.println("La busqueda no arrojó resultados");
+                    UIBuilder.buildUI(LibroNoEncontradoUI.class);
                 }
 
                 if (buscar!=null){
