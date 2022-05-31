@@ -7,7 +7,7 @@ Diagrama completo
 [Libro](https://user-images.githubusercontent.com/101165561/171085881-825c8259-768c-4d27-aa7a-387d452954fd.png)
 
 
-Las imagenes son de alta resolución, para verlas hacer zoom!!!
+Las imagenes son de alta resolución, para verlas hacer zoom cliqueandolas!!!
 
 
 Diagrama simple:
