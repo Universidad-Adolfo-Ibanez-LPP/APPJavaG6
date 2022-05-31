@@ -1,12 +1,16 @@
 package com.uai.app.ui.cambiar;
 import com.uai.app.dominio.Libro;
 import com.uai.app.exceptions.BookNotFoundException;
+import com.uai.app.exceptions.LibroNoEncontradoUI;
+import com.uai.app.exceptions.SedeNotFoundOkUI;
 import com.uai.app.logic.DataManager;
 import com.uai.app.logic.Data_adder;
 import com.uai.app.logic.SearchManager;
 import com.uai.app.logic.builders.LibroBuilder;
 import com.uai.app.ui.BuscarEditarUI;
+import com.uai.app.ui.GuardarUI;
 import com.uai.app.ui.utils.UAIJFrame;
+import com.uai.app.ui.utils.UIBuilder;
 
 import javax.swing.*;
 import javax.swing.event.CellEditorListener;
@@ -45,7 +49,21 @@ public class CambiarSede2UI extends UAIJFrame implements CellEditorListener{
                 {
                     Libro origin = CambiarSedeUI.getBuscar();
                     String sede = textField1.getText();
+                    HashSet<String> data = DataManager.getInstance().getSedeTEMP();
 
+                    String index = null;
+                    Integer num = 0;
+                    for (String s : data) {
+                        if (s.compareTo(sede) == 0) {
+                            index = s;
+                            num = 1;
+                        }
+                    }
+                    if(index == null){
+                    System.err.println("No se encontro la sede a cambiar");
+                    UIBuilder.buildUI(SedeNotFoundOkUI.class);//No implemento excepciones reales por como se escribió cambiarUI
+
+                }else{
                     LibroBuilder builder = new LibroBuilder();
                     builder.withTitulo(origin.getTitulo());
                     builder.withAutor(origin.getAutor());
@@ -59,8 +77,9 @@ public class CambiarSede2UI extends UAIJFrame implements CellEditorListener{
 
                     LibroBuilder builderpis = new LibroBuilder();
                     builderpis.withSede(sede);
+                    UIBuilder.buildUI(GuardarUI.class);
 
-                    dispose();
+                    dispose();}
 
                 }
             }

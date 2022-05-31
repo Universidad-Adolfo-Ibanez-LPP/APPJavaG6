@@ -1,12 +1,16 @@
 package com.uai.app.ui.cambiar;
 import com.uai.app.dominio.Libro;
 import com.uai.app.exceptions.BookNotFoundException;
+import com.uai.app.exceptions.SeccionNotFoundOkUI;
+import com.uai.app.exceptions.SedeNotFoundOkUI;
 import com.uai.app.logic.DataManager;
 import com.uai.app.logic.Data_adder;
 import com.uai.app.logic.SearchManager;
 import com.uai.app.logic.builders.LibroBuilder;
 import com.uai.app.ui.BuscarEditarUI;
+import com.uai.app.ui.GuardarUI;
 import com.uai.app.ui.utils.UAIJFrame;
+import com.uai.app.ui.utils.UIBuilder;
 
 import javax.swing.*;
 import javax.swing.event.CellEditorListener;
@@ -45,23 +49,39 @@ public class CambiarSeccion2UI extends UAIJFrame implements CellEditorListener{
                 {
                     Libro origin = CambiarSeccionUI.getBuscar();
                     String seccion = textField1.getText();
+                    HashSet<String> data = DataManager.getInstance().getSeccionTEMP();
 
-                    LibroBuilder builder = new LibroBuilder();
-                    builder.withTitulo(origin.getTitulo());
-                    builder.withAutor(origin.getAutor());
-                    builder.withAnio(origin.getAnio());
-                    builder.withEstante_numero(origin.getEstante_numero());
-                    builder.withEstante_seccion(seccion);
-                    builder.withEdificio(origin.getEdificio());
-                    builder.withSede(origin.getSede());
-                    Libro agregar = builder.build();
-                    Data_adder.overwrite(origin, agregar);
+                    String index = null;
+                    Integer num = 0;
+                    for (String s : data) {
+                        if (s.compareTo(seccion) == 0) {
+                            index = s;
+                            num = 1;
+                        }
+                    }
+                    if(index == null) {
+                        System.err.println("No se encontro la seccion a cambiar");
+                        UIBuilder.buildUI(SeccionNotFoundOkUI.class);//No implemento excepciones reales por como se escribió cambiarUI
 
-                    LibroBuilder builderpis = new LibroBuilder();
-                    builderpis.withEstante_seccion(seccion);
 
-                    dispose();
 
+                    }else{
+                            LibroBuilder builder = new LibroBuilder();
+                            builder.withTitulo(origin.getTitulo());
+                            builder.withAutor(origin.getAutor());
+                            builder.withAnio(origin.getAnio());
+                            builder.withEstante_numero(origin.getEstante_numero());
+                            builder.withEstante_seccion(seccion);
+                            builder.withEdificio(origin.getEdificio());
+                            builder.withSede(origin.getSede());
+                            Libro agregar = builder.build();
+                            Data_adder.overwrite(origin, agregar);
+
+                            LibroBuilder builderpis = new LibroBuilder();
+                            builderpis.withEstante_seccion(seccion);
+                            UIBuilder.buildUI(GuardarUI.class);
+                            dispose();
+                        }
                 }
             }
         });
